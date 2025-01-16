@@ -58,6 +58,7 @@ The **Places Explorer Project** is a web application that allows users to search
 ### Deployment 🚢
 - **Docker**: For containerized Neo4j setup
 - **GraphQL**: For fetching user-specific saved places
+- **Vercel**: For deploying the backend and frontend
 
 ---
 
@@ -179,6 +180,46 @@ The **Places Explorer Project** is a web application that allows users to search
 - `NEO4J_URI`: Connection URI for Neo4j database.
 - `NEO4J_USER`: Username for Neo4j database.
 - `NEO4J_PASSWORD`: Password for Neo4j database.
+
+---
+
+## Vercel Deployment ⚡
+
+For deploying the backend and frontend to **Vercel**, follow these steps:
+
+1. **Create a `vercel.json` file** at the root of your project to configure Vercel deployment.
+   ```json
+   {
+     "version": 2,
+     "builds": [
+       {
+         "src": "run.py",
+         "use": "@vercel/python"
+       },
+       {
+         "src": "frontend/package.json",
+         "use": "@vercel/react"
+       }
+     ],
+     "env": {
+       "SECRET_KEY": "@secret_key",
+       "GOOGLE_API_KEY": "@google_api_key",
+       "NEO4J_URI": "@neo4j_uri",
+       "NEO4J_USER": "@neo4j_user",
+       "NEO4J_PASSWORD": "@neo4j_password"
+     }
+   }
+   ```
+   This configuration ensures that Vercel deploys your FastAPI backend (`run.py`) and React frontend correctly.
+
+2. **Deploy**:
+   - Push your code to a GitHub repository.
+   - Link the repository to Vercel through the Vercel dashboard.
+   - Vercel will automatically build and deploy your project.
+
+3. **Environment Variables in Vercel**:
+   - Set the environment variables in the Vercel dashboard under your project settings.
+   - Add `SECRET_KEY`, `GOOGLE_API_KEY`, `NEO4J_URI`, `NEO4J_USER`, and `NEO4J_PASSWORD` to the Vercel environment.
 
 ---
 
