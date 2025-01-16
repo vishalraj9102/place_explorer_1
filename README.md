@@ -46,7 +46,11 @@ The **Places Explorer Project** is a web application that allows users to search
 ### Frontend
 - **Framework**: React.js
 - **Styling**: Tailwind CSS or Bootstrap
-- **Icons**: FontAwesome / Material-UI Icons
+- **Icons**: FontAwesome / Material-UI Icons for responsive and visually appealing UI elements.
+  - Example icons:
+    - Search: Magnifying glass icon for the search bar.
+    - Save: Bookmark icon for saving places.
+    - Location: Pin icon for showing coordinates.
 
 ### Deployment
 - **Docker**: For containerized Neo4j setup
@@ -165,11 +169,22 @@ The **Places Explorer Project** is a web application that allows users to search
 
 ---
 
+## Environment Variables
+
+- `SECRET_KEY`: Secret key for JWT authentication.
+- `GOOGLE_API_KEY`: API key for accessing Google Places API.
+- `NEO4J_URI`: Connection URI for Neo4j database.
+- `NEO4J_USER`: Username for Neo4j database.
+- `NEO4J_PASSWORD`: Password for Neo4j database.
+
+---
+
 ## Future Improvements
 - Add pagination to the GraphQL endpoint.
 - Implement caching for API responses.
 - Enhance error handling for API failures.
 - Add unit tests for backend functionality.
+- Improve frontend design with additional icons and animations.
 
 ---
 
@@ -181,4 +196,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Contact
 For any questions or suggestions, feel free to reach out:
 - **GitHub**: [vishalraj9102](https://github.com/vishalraj9102)
-- **Email**: [vishalraj@example.com](mailto:vishalraj@example.com)
+- **Email**: [vishalrajmehra95@gmail.com.com](mailto:vishalrajmehra95@gmail.com)
