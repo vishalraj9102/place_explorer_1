@@ -42,7 +42,7 @@ function SavedPlaces({ user }) {
 
     setSaving(placeId); // Track the place being saved
     try {
-      const response = await fetch("http://localhost:5000/place/save", {
+      const response = await fetch("http://localhost:5000/places/save", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

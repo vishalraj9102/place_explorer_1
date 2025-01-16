@@ -12,10 +12,12 @@ function SearchPlaces() {
     const token = localStorage.getItem("token"); // Retrieve token
     if (!token) {
       setMessage("You need to log in first."); // Check if logged in
+      console.log("User not logged in."); // Log to console
       return;
     }
 
     try {
+      console.log("Searching for:", searchQuery); // Log search query
       const response = await fetch(
         `http://localhost:5000/places/search?keyword=${searchQuery}`, // API call
         {
@@ -28,6 +30,7 @@ function SearchPlaces() {
 
       if (response.ok) {
         const data = await response.json(); // Parse response
+        console.log("Search results:", data); // Log the fetched data
         if (data.length === 0) {
           setMessage("No places found.");
         } else {
@@ -36,9 +39,10 @@ function SearchPlaces() {
         }
       } else {
         setMessage("Failed to fetch places. Please try again.");
+        console.error("Fetch failed with status:", response.status); // Log error status
       }
     } catch (error) {
-      console.error("Error fetching places:", error);
+      console.error("Error fetching places:", error); // Log error details
       setMessage("An error occurred. Please try again later.");
     }
   };
@@ -48,10 +52,12 @@ function SearchPlaces() {
     const token = localStorage.getItem("token");
     if (!token) {
       setMessage("You need to log in first.");
+      console.log("User not logged in while saving the place."); // Log to console
       return;
     }
 
     try {
+      console.log("Saving place:", place); // Log the place to be saved
       const response = await fetch("http://localhost:5000/place/save", {
         method: "POST",
         headers: {
@@ -68,12 +74,14 @@ function SearchPlaces() {
 
       const result = await response.json();
       if (response.status === 200) {
+        console.log("Place saved successfully:", result); // Log success
         setMessage("Place saved successfully!");
       } else {
+        console.error("Failed to save the place:", result); // Log failure
         setMessage(result.message || "Failed to save the place.");
       }
     } catch (error) {
-      console.error("Error saving place:", error);
+      console.error("Error saving place:", error); // Log error details
       setMessage("An error occurred. Please try again.");
     }
   };
