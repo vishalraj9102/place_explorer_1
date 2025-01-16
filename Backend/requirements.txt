@@ -1,0 +1,8 @@
+Flask
+Flask-JWT-Extended
+Flask-Cors
+flask-neo4j
+Werkzeug
+neo4j
+requests
+python-dotenv
