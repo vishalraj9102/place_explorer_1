@@ -1,0 +1,19 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ; 
+    width: 60vw;
+     
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    width: 40%;
+     }
+.form-container > div{
+    display: flex;
+    justify-content: space-between;
+}
